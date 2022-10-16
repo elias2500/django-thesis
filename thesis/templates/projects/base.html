@@ -15,7 +15,12 @@
                 <ul class='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
                     <li><a class='nav-link px-2 text-white' href="{% url 'index' %}">Home</a></li>
                     <li><a class='nav-link px-2 text-white' href="#">Projects</a></li>
-                    <li><a class='nav-link px-2 text-white' href="{% url 'projects:register' %}">Register</a></li>
+                    <li><a class='nav-link px-2 text-white' href="{% url 'register' %}">Register</a></li>
+                    {% if user.is_authenticated %}
+                        <li><a class='nav-link px-2 text-white' href="{% url 'logout' %}">Logout</a></li>
+                    {% else %}
+                        <li><a class='nav-link px-2 text-white' href="{% url 'projects:user_login' %}">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.index, name="index"),
     re_path(r'^projects/', include('projects.urls')),
-    re_path(r'^register/', views.register, name='register')
+    re_path(r'^register/', views.register, name='register'),
+    re_path(r'^logout/$', views.user_logout, name='logout'),
 ]
