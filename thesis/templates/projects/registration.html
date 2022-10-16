@@ -1,0 +1,22 @@
+{% extends 'projects/base.html' %}
+{% block body_block %}
+
+<div class="jumbotron">
+    {% if registered %}
+        <h1>Thank you for registering!</h1>
+    {% else %}
+        <div class="container">
+            <div class="p-5 mb-4 bg-light rounded-3">
+                <h1>Register Here!</h1>
+                <h3>Fill out the form:</h3>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    {{ user_form.as_p }}
+                    <input type="submit" value="Register">
+                </form>
+            </div>
+        </div>
+    {% endif %}
+        
+{% endblock body_block %}
