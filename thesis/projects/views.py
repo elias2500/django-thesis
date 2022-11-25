@@ -54,3 +54,6 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return HttpResponseRedirect(reverse('index'))
+
+def user_projects(request):
+    return render(request, 'projects/projects.html')
