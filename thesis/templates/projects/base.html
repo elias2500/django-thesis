@@ -9,22 +9,26 @@
     <title>Document</title>
 </head>
 <body>
-    <header class='p-3 text-bg-dark'>
+<main>
+    <nav class="p-3 navbar navbar-expand navbar-dark bg-dark">
         <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <ul class='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0'>
-                    <li><a class='nav-link px-2 text-white' href="{% url 'index' %}">Home</a></li>
-                    <li><a class='nav-link px-2 text-white' href="#">Projects</a></li>
-                    <li><a class='nav-link px-2 text-white' href="{% url 'register' %}">Register</a></li>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item col-6 col-lg-auto"><a class="nav-link px-2 text-white" href="{% url "index" %}">Home</a></li>
+                    <li class="nav-item col-6 col-lg-auto"><a class="nav-link px-2 text-white" href="#">Projects</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li><a class="nav-link px-2 text-white" href="{% url "register" %}">Register</a></li>
                     {% if user.is_authenticated %}
-                        <li><a class='nav-link px-2 text-white' href="{% url 'logout' %}">Logout</a></li>
+                        <li><a class="nav-link px-2 text-white" href="{% url "logout" %}">Logout</a></li>
                     {% else %}
-                        <li><a class='nav-link px-2 text-white' href="{% url 'projects:user_login' %}">Login</a></li>
+                        <li><a class="nav-link px-2 text-white" href="{% url "projects:user_login" %}">Login</a></li>
                     {% endif %}
                 </ul>
             </div>
         </div>
-    </header>
+    </nav>
+</main>
     {% block body_block %}
     {% endblock %}
 </body>
