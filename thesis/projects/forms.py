@@ -1,11 +1,9 @@
-from django import forms
-from django import forms
-from django.contrib.auth.models import User
-from projects.models import UserProfileInfo
-
-class UserForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput())
-
-    class Meta():
-        model = User 
-        fields = ('username', 'email', 'password', 'first_name', 'last_name')
+"""class UserProject(forms.Form):
+    project_name = forms.CharField(max_length=50)
+    number_of_players = forms.IntegerField()
+    difficulty = forms.ChoiceField(choices=["Easy","Medium","Hard"])
+    has_actor = forms.ChoiceField(choices=["Yes","No"])
+    theme = forms.CharField(max_length= 256, required=False)
+    scenario = forms.Textarea()
+    no_of_riddles = forms.IntegerField()"""
+    

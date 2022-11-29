@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body_block %}
+
+<div class="p-5 mb-4 bg-light rounded-3">
+    <a href="{% url 'projects:projects_form' %}">
+        <button class="btn btn-primary"> Create New Project</button>
+    </a>
+</div>
+
+{% endblock body_block %}
